@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="n.jpg"> 
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Kanit:wght@300&family=Lato:ital,wght@0,100;1,400&family=Roboto:wght@100;700&family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> 
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<bod>
+    <div class="outside">
+        <div class="header">Registration Form</div>
+        <div class="imformation-user">
+            <div class="fill-information">
+                <label class="label--form" for="studentid">Student ID<span class="error-marker">*</span></label>
+                <input id="studentid" type="text" class="validate" name="student_id" required placeholder="09HU934">
+            </div>
+            <div class="fill-information">
+                <label class="label--form" for="fullname">Full Name<span class="error-marker">*</span></label>
+                <input id="fullname" type="text" class="validate" name="full_name" required placeholder="Ketza Monica">
+            </div>
+            <div class="fill-information">
+                <label class="label--form" for="dateofbirth">Date of Birth<span class="error-marker">*</span></label>
+                <input id="dateofbirth" type="text" class="datepicker" name="date_birth" placeholder="dd/mm/yyyy" required>
+            </div>
+            <div class="fill-information">
+                <label for="gender" class="label--form">Gender<span class="error-marker">*</span></label>
+                <form class="sex"> 
+                    <p><label><input value="Female" type="checkbox"  name="gender" class="single-checkbox" ><span>Female</span></label></p>
+                    <p><label><input value="Male" type="checkbox" name="gender" class="single-checkbox " ><span>Male</span></label></p>
+                </form>
+            </div>
+        </div>
+
+        <div class="registration">
+            <div class="fill-information">
+                <label class="label--form" for="subjectlist">Subject list<span class="error-marker">*</span></label>
+                <div class="subject-list" id="subjectlist">
+                    <li  class="list" id="one" ><span style="padding-right:20px; padding-left: 0px;">&#8883</span>Specify the input requirements</li>
+                    <li class="list"><span style="padding-right:20px; padding-left: 0px;">&#8883</span>Machine learning </li>
+                    <li class="list"><span style="padding-right:20px; padding-left: 0px;">&#8883</span>Python </li>
+                    <li class="list"><span style="padding-right:20px; padding-left: 0px;">&#8883</span>MySQL </li>
+                    <li class="list"><span style="padding-right:20px; padding-left: 0px;">&#8883</span>JavaScript </li>
+                    <li class="list"><span style="padding-right:20px; padding-left: 0px;">&#8883</span>PHP </li>
+                    <li class="list"><span style="padding-right:20px; padding-left: 0px;">&#8883</span>HTML</li>
+                    <li class="list"><span style="padding-right:20px; padding-left: 0px;">&#8883</span>Query language</li>
+                    <li class="list"><span style="padding-right:20px; padding-left: 0px;">&#8883</span>C# </li>
+                    <li class="list"><span style="padding-right:20px; padding-left: 0px;">&#8883</span>C plus plus </li>
+                </div>
+            </div>
+            <div class="transaction">
+                <input id="firstbutton" type="button" value="&#10095" class="element" style="border-bottom:3px solid #4CAF50"></input>
+                <input id="secondbutton" type="submit" value="&#10094" class="element" style="border-bottom:3px solid #4CAF50"></input>
+                <input id="thirdbutton" type="submit" value="&#10095&#10095" class="element" style="border-bottom:3px solid #4CAF50"></input>
+                <input id="fouthbutton" type="submit" value="&#10094&#10094" class="element" style="border-bottom:3px solid #4CAF50"></input>
+            </div>
+            <div class="fill-information">
+                <label class="label--form" for="subjectlist">Registration list<span class="error-marker">*</span></label>
+                <div class="subject-list" id="registration"></div>
+            </div>
+        </div>
+
+        <div class="fill-information">
+            <label class="label--form"><span class="error-marker">*</span>Required</label>
+            <div class="button">
+                <input id="submit-button" type="submit" value="Submit" class="element-submit" style="width: 200px; border-bottom: 4px solid #020f53c4;"></input>
+                <input onclick="confirmtable()" id="regist-button" type="submit" value="Registered table" class="element-submit" style="border-bottom: 4px solid #020f53c4;"></input>
+            </div>
+        </div>
+        
+        <table class="responsive-table" id="tablelist" >
+                <thead>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Full Name</th>
+                    <th>Date of Birth</th>
+                    <th>Gender</th>
+                </tr>
+                </thead>
+
+                <tbody id="welcome" class="in">
+                    <tr>
+                        <th id="id-col"></th>
+                        <th id="fullname-col"></th>
+                        <th id="dateofbirth-col"></th>
+                        <th id="gender-col"></th>
+                    </tr>           
+                </tbody>
+        </table>
+                        
+    </div>  
+
+
+    <div class="outsideinfor hidden-infor" id="confirmtable">
+        <div class="confirm" id="confirmid">
+            <div class="confirm-title">Information</div>
+            <div class="confirm-person">
+                <div class="confirm-element">
+                    <p style="font-weight:600; ">Student ID:</p>
+                    <p id="studentId"></p>
+                </div>
+                <div class="confirm-element">
+                    <p style="font-weight:600; ">Full Name:</p>
+                    <p id="fullName"></p>
+                </div>
+                <div class="confirm-element">
+                    <p style="font-weight:600; ">Date of Birth:</p>
+                    <p id="dateBirth"></p>
+                </div>
+                <div class="confirm-element">
+                    <p style="font-weight:600; ">Gender:</p>
+                    <p id="genderSex"></p>
+                </div>
+                <div class="confirm-element-end">
+                    <p style="font-weight:600; margin:10px 0px;">Registered Subjects:</p>
+                    <ul class="confirm--list" id="listSubject"></ul>
+                </div>  
+            </div>   
+            <div class="confirm-button">
+                <input type="button" value="Close" class="button-close" id="closetab">
+            </div>
+        </div>
+    </div>
+        
+
+    <script src="design.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</body>
+</html>
+
+
